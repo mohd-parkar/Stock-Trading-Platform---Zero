@@ -21,7 +21,6 @@ function HomePage(){
             <Education/>
             <OpenAccount/>
             <Footer/>
-
         </>
     );
 }
