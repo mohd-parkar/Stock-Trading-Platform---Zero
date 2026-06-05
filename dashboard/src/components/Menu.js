@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from 'react-router-dom';
+import '../index.css';
 
 const Menu = () => {
   return (
@@ -7,22 +9,34 @@ const Menu = () => {
       <div className="menus">
         <ul>
           <li>
-            <p>Dashboard</p>
+              <Link to={"/"} style={{textDecoration: "none"}} >
+              <p style={{color: "grey"}} className="hovering">Dashboard</p>
+              </Link>
           </li>
           <li>
-            <p>Orders</p>
+             <Link to={"/orders"} style={{textDecoration: "none"}}>
+              <p style={{color: "grey"}}>Orders</p>
+              </Link>
           </li>
           <li>
-            <p>Holdings</p>
+            <Link to={"/holdings"} style={{textDecoration: "none"}}>
+              <p style={{color: "grey"}}>Holdings</p>
+              </Link>
           </li>
           <li>
-            <p>Positions</p>
+             <Link to={"/positions"} style={{textDecoration: "none"}}>
+              <p style={{color: "grey"}}>Positions</p>
+              </Link>
           </li>
           <li>
-            <p>Funds</p>
+             <Link to={"/funds"} style={{textDecoration: "none"}}>
+              <p style={{color: "grey"}}>Funds</p>
+              </Link>
           </li>
           <li>
-            <p>Apps</p>
+             <Link to={"/apps"} style={{textDecoration: "none"}}>
+              <p style={{color: "grey"}}>Apps</p>
+              </Link>
           </li>
         </ul>
         <hr />
