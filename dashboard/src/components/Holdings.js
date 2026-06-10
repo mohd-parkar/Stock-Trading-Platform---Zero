@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 // import { holdings } from "../data/data";
 import '../index.css';
-import axios from 'axios';
+import axios, { all } from 'axios';
+import BarGraph from "./BarGraph";
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
@@ -12,6 +13,20 @@ const Holdings = () => {
       setAllHoldings(res.data)
     })
   })
+
+//Bar Graph Data
+const labels = allHoldings.map((subarray)=> subarray["name"]);
+
+ const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Stock Name',
+      data: allHoldings.map((stock)=>stock.price),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    }
+  ],
+};
 
   return (
     <>
@@ -70,6 +85,8 @@ const Holdings = () => {
           <p>P&L</p>
         </div>
       </div>
+
+      <BarGraph data = {data}/>
     </>
   );
 };
